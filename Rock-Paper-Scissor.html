@@ -15,7 +15,8 @@
   <script>
     function play(playerMove) {
       const moves = ['rock', 'paper', 'scissors'];
-      const computerMove = moves[Math.floor(Math.random() * moves.length)];
+      const computerMove = moves[Math.floor(Math.random() * moves.length + Math.random()) % moves.length];
+      alert(`Player move: ${playerMove} \n Computer move: ${computerMove}`);
       let result;
 
       if (playerMove === computerMove) {
@@ -29,7 +30,7 @@
       } else {
         result = `You lose! Computer chose ${computerMove}.`;
       }
-      alert(`Your move: ${playerMove}\n${result}`);
+      alert(`Result:\n${result}`);
     }
   </script>
 </body>
